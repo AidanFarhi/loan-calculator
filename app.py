@@ -17,6 +17,7 @@ def total():
     term = request.form.get("term")
     term = float(term)
     monthly = principle * rate / (1 - math.pow(1 + rate, - term))
+    monthly = int(monthly)
     return render_template("index.html", monthly="monthly")
     
 
