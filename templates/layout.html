@@ -54,12 +54,14 @@
       <br>
       <br>
 
+    </form>
+
       <h3>Monthly Payment</h3>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
-        <output type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="monthly">{{ monthly_payment }}</output>
+        <span action="{{ url_for( 'total' ) }}" method="get" class="form-control" aria-label="Amount (to the nearest dollar)" name="monthly">{{ monthly }}</span>
         <div class="input-group-append">
           <span class="input-group-text">.00</span>
         </div>
@@ -70,13 +72,13 @@
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
-        <output type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="finance_charges">{{ finance_charges }}</output>
+        <span class="form-control" aria-label="Amount (to the nearest dollar)"></span>
         <div class="input-group-append">
           <span class="input-group-text">.00</span>
         </div>
       </div>
 
-      </form>
+    
 
     </div>
 </div>
