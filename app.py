@@ -9,6 +9,8 @@ def index():
 
 @app.route("/total", methods=["POST", "GET"])
 def total():
+
+    # To calculate monthly charge    
     principle = request.form.get("loan_amount")
     principle = int(principle)
     rate = request.form.get("percentage")
@@ -18,7 +20,11 @@ def total():
     term = float(term)
     monthly = principle * rate / (1 - math.pow(1 + rate, - term))
     monthly = int(monthly)
-    return render_template("index.html", monthly=monthly)
+
+    # To calculate total finance charges
+    finance_charges = (monthly * term) - principle
+    
+    return render_template("index.html", monthly=monthly, finance_charges=finance_charges)
     
 
 
